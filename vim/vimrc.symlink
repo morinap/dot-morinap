@@ -1,0 +1,175 @@
+syntax on
+set nocompatible
+filetype plugin on
+
+" Ensure vplug is enabled
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Install useful plugins
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'           " Status line plugin
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'               " Tree browser
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'                " Fuzzy file opener
+Plug 'morhetz/gruvbox'                   " Good theme
+Plug 'osyo-manga/vim-over'               " Substitution preview
+Plug 'tpope/vim-fugitive'                " Git integration
+Plug 'bronson/vim-trailing-whitespace'   " Highlight trailing whitespace
+Plug 'mileszs/ack.vim'                   " Search within vim
+Plug 'airblade/vim-gitgutter'            " Git Gutter
+Plug 'wakatime/vim-wakatime'             " WakaTime
+Plug 'editorconfig/editorconfig-vim'     " Plugin for different syntax settings per-project
+Plug 'w0rp/ale'                          " Plugin for linting
+Plug 'sonph/onehalf', {'rtp': 'vim/'}    " Nice color theme
+Plug 'andymass/vim-matchup'              " Better curly brace matching
+Plug 'elixir-editors/vim-elixir'         " Vim elixr syntax
+Plug 'dag/vim-fish'                      " Vim FISH Shell syntax
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Sublime-style multi cursor
+Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ayu-theme/ayu-vim'
+Plug 'wellle/context.vim'
+call plug#end()
+
+" Color scheme settings
+if (has("termguicolors"))
+  set termguicolors
+endif
+set background=light
+set t_Co=256
+"colorscheme onehalfdark
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_termcolors='16'
+"colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox
+highlight Comment cterm=italic gui=italic
+"colorscheme solarized
+"colorscheme PaperColor
+let g:solarized_termcolors=256
+let g:solarized_visibility="low"
+let g:solarized_contrast="high"
+let ayucolor="light"
+"colorscheme ayu
+set guifont=Inconsolata\ for\ Powerline:h13
+highlight IncSearch guibg=green ctermbg=green term=underline
+
+"if (has("nvim"))
+"  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"endif
+""For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+""Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+"" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" Additional UI Settings
+"set relativenumber
+set cursorline
+set number
+set colorcolumn=100
+set ruler
+set visualbell
+set splitright
+set splitbelow
+"set clipboard=unnamed " Enable OS X clipboard integration
+
+" Keyboard shortcuts
+map <C-c> "+y
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>cfr :let @+=expand("%")<CR>
+nnoremap <leader>cfd :let @+=expand("%:h")<CR>
+nnoremap <leader>cff :let @+=expand("%:t")<CR>
+nnoremap <leader>cfa :let @+=expand("%:p")<CR>
+nnoremap <leader>cfad :let @+=expand("%:p:h")<CR>
+nnoremap <c-k> :<c-u>MatchupWhereAmI?<cr>
+
+" Pane navigation
+" Do this in a VimEnter to squash what gvimrc has
+nnoremap <MD-Left> :wincmd h<CR>
+nnoremap <MD-Right> :wincmd l<CR>
+nnoremap <MD-Up> :wincmd k<CR>
+nnoremap <MD-Down> :wincmd j<CR>
+
+" Tab, indent, and whitespace settings
+set encoding=utf-8
+set smartindent
+set expandtab
+set showbreak=↪\ 
+set listchars=tab:»\ ,eol:¬,extends:›,precedes:‹,nbsp:␣,trail:•,space:·
+set list!
+set nowrap
+set tabstop=2 shiftwidth=2
+set backspace=indent,eol,start
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital let
+set laststatus=2
+
+" Airline
+let g:airline_powerline_fonts=1
+"let g:airline_theme='papercolor'
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled=1
+
+" NerdTree
+"autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Ctrl-P
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|tmp\|bower_components\|deps\|_build\|docs\|.*\.meta\|packrat/\|log/'
+let g:ctrlp_dont_split = 'NERD_tree_1'
+" let g:ctrlp_abbrev = {
+"     \ 'gmode': 't',
+"     \ 'abbrevs': [
+"         \ {
+"         \ 'pattern': '\(^@.\+\|\\\@<!:.\+\)\@<! ',
+"         \ 'expanded': '_',
+"         \ 'mode': 'pfrz',
+"         \ },
+"         \ ]
+"     \ }
+
+" Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ackprg='ag --vimgrep'
+
+  " Use ag in CtrlP for listing files. Fast and respects .gitignore
+  let g:ctrlp_user_comment = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " bind \ to grep shortcut
+  "command -nargs=+ -complete=file -bar Ag silent! <args>|cwindow|redraw!
+  cnoreabbrev Ack Ack!
+  nnoremap \ :Ack!<SPACE>
+endif
+
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on
+
+" Custom mappings for file types to syntax
+au BufNewFile,BufRead *.sls set filetype=yaml
+au BufNewFile,BufRead *.raml set filetype=yaml foldmethod=indent
+
+" EditorConfig.... config
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" Vim multiline
+let g:VM_mouse_mappings = 1

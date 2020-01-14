@@ -1,0 +1,24 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+
+[*.conf]
+indent_style = tab
+indent_size = 4
+
+[*.sass]
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+indent_size = 2
+
+[*.sh]
+indent_style = tab
+indent_size = 4
+
+[*.go]
+indent_style = tab
+indent_size = 4

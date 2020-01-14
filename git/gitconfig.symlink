@@ -1,0 +1,71 @@
+# Local/private config goes in the include
+[include]
+        path = ~/.gitconfig.local
+[hub]
+        protocol = https
+[alias]
+        co = checkout
+        promote = !$ZSH_DOTFILES/bin/git-promote
+        wtf     = !$ZSH_DOTFILES/bin/git-wtf
+        rank-contributors = !$ZSH_DOTFILES/bin/git-rank-contributors
+        count   = !git shortlog -sn
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim -f +startinsert
+        pager = delta
+[merge]
+        tool = kdiff3
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
+[push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to suppress warning message
+        default = current
+[credential]
+	helper = osxkeychain
+[stash]
+        showPatch = 1
+[pager]
+        branch = false
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
+[tag]
+	forceSignAnnotated = true
+[pull]
+	rebase = true
+[submodule]
+	recurse = true
+
+[delta]
+    line-numbers = true
+    #plus-style = "syntax #012800"
+    #minus-style = "syntax #340001"
+    plus-style = "#22aa22" bold "#aaffaa"
+    minus-style = "#ff0000" bold "#ffaaaa"
+    syntax-theme = "Solarized (light)"
+    #syntax-theme = "GitHub"
+    #syntax-theme = "gruvbox-white"
+
+[interactive]
+    diffFilter = delta --color-only
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+[init]
+	defaultBranch = main

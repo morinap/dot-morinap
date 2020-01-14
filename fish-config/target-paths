@@ -1,0 +1,3 @@
+00-load-dotfiles.fish:.config/fish/conf.d
+01-iterm2-integration.fish:.config/fish/conf.d
+starship.toml:.config

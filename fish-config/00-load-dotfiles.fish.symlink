@@ -1,0 +1,26 @@
+set -x DOTFILES_PATH ~/.morinap
+
+# Find all env files and export env values
+set -l env_files (find $DOTFILES_PATH -name "*.env")
+for env_file in $env_files
+  while read -la line
+    set -l var (echo $line | cut -d":" -f 1)
+    set -l val (echo $line | cut -d":" -f 2-)
+    set -x $var (eval "echo $val")
+  end < $env_file
+end
+
+# Find all path files and add to path
+set -l path_files (find $DOTFILES_PATH -name "*.path")
+for path_file in $path_files
+  while read -la line
+    set -x fish_user_paths (eval "echo $line") $fish_user_paths
+  end < $path_file
+end
+
+# Find all fish files and source
+set -l fish_files (find $DOTFILES_PATH -name "*.fish" -not -path "*fish-config/*")
+for fish_file in $fish_files
+  source $fish_file
+end
+

@@ -1,0 +1,10 @@
+[aws]
+disabled = true
+
+[time]
+disabled = false
+time_format = "[%T]"
+format = "[$time]($style) "
+
+[elixir]
+disabled = true
