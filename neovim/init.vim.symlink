@@ -1,0 +1,26 @@
+""" Start with Optixal's Neovim
+source ~/.config/nvim/optixal.vim
+
+""" Add my settings
+set cc=100                                                                            " 80 column marker
+set list listchars=tab:»\ ,eol:¬,extends:›,precedes:‹,nbsp:␣,trail:•,space:·          " Show all whitespace
+set visualbell
+set splitright
+set splitbelow
+
+""" Disable smootih
+let g:smoothie_enabled=0
+
+""" Keyboard shortcuts
+nnoremap <leader>cfr :let @+=expand("%")<CR>
+nnoremap <leader>cfd :let @+=expand("%:h")<CR>
+nnoremap <leader>cff :let @+=expand("%:t")<CR>
+nnoremap <leader>cfa :let @+=expand("%:p")<CR>
+nnoremap <leader>cfad :let @+=expand("%:p:h")<CR>
+
+""" Vim signify
+let g:signify_sign_add = '+'
+let g:signify_sign_delete = '_1'
+let g:signify_sign_change = '!'
+" Force show sign column so it doesn't "jump", but disable optixal behavior of using the number column for the sign column because that's really dumb
+set signcolumn=yes
