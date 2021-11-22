@@ -55,9 +55,9 @@
     line-numbers = true
     #plus-style = "syntax #012800"
     #minus-style = "syntax #340001"
-    plus-style = "#22aa22" bold "#aaffaa"
-    minus-style = "#ff0000" bold "#ffaaaa"
-    syntax-theme = "Solarized (light)"
+    #plus-style = "#22aa22" bold "#aaffaa"
+    #minus-style = "#ff0000" bold "#ffaaaa"
+    syntax-theme = "Solarized (dark)"
     #syntax-theme = "GitHub"
     #syntax-theme = "gruvbox-white"
 

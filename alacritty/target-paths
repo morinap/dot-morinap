@@ -1,1 +1,2 @@
 alacritty.yml:.config/alacritty/
+dracula.yml:./config/alacritty
