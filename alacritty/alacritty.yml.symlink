@@ -99,8 +99,9 @@ key_bindings:
   - { key: Down, mods: Command|Alt, chars: "\e[1;5B" }
 
 
-mouse:
-  url:
+hints:
+  mouse:
+    enabled: true
     modifiers: Command
 
 # Colors (Solarized Light)
