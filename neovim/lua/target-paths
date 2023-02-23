@@ -1,0 +1,7 @@
+diagnostics.lua:.config/nvim/lua/
+lspconfig-config.lua:.config/nvim/lua/
+lualine-config.lua:.config/nvim/lua/
+nvim-cmp-config.lua:.config/nvim/lua/
+nvim-tree-config.lua:.config/nvim/lua/
+telescope-config.lua:.config/nvim/lua/
+treesitter-config.lua:.config/nvim/lua/
