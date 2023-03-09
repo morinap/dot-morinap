@@ -8,6 +8,10 @@ set visualbell
 set splitright
 set splitbelow
 
+set spelllang=en,cjk
+set clipboard+=unnamedplus
+
+
 """ Disable smootih
 let g:smoothie_enabled=0
 
@@ -17,6 +21,11 @@ nnoremap <leader>cfd :let @+=expand("%:h")<CR>
 nnoremap <leader>cff :let @+=expand("%:t")<CR>
 nnoremap <leader>cfa :let @+=expand("%:p")<CR>
 nnoremap <leader>cfad :let @+=expand("%:p:h")<CR>
+
+nnoremap <leader>@ <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader># <cmd>Telescope lsp_workspace_symbols<cr>
+
+autocmd BufWritePre * lua vim.lsp.buf.format()
 
 """ Vim signify
 let g:signify_sign_add = '+'
