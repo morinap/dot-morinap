@@ -36,7 +36,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'chrisbra/Colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'dkarter/bullets.vim'
-Plug 'wellle/context.vim'
+" Plug 'wellle/context.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Functionalities - Python
@@ -52,6 +52,15 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
+
+" Me
+Plug 'wakatime/vim-wakatime'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'ellisonleao/gruvbox.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'navarasu/onedark.nvim'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 call plug#end()
 
@@ -113,7 +122,7 @@ augroup MyColors
     "autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
 augroup END
 
-color dracula
+color onedark
 set termguicolors
 
 """ Core plugin configuration (vim)

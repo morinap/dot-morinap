@@ -40,4 +40,10 @@ function add_capabilities()
     end
 end
 
+require('lspconfig')['elixirls'].setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "/Users/amorin/opt/elixir-ls/elixir-ls" },
+}
+
 add_capabilities()
