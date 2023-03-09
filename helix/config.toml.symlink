@@ -1,0 +1,11 @@
+theme = "sonokai"
+
+[editor.whitespace]
+render = "all"
+
+[keys.normal]
+#"," = "space_mode"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-type"]
+center = ["file-name"]
