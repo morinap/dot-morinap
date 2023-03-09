@@ -1,7 +1,7 @@
 ruby 2.6.4
-nodejs 16.13.0
-elixir 1.7.4
+nodejs 16.15.1
+elixir 1.14.2
 python 3.7.4
 golang 1.13.1
 yarn 1.22.0
-erlang 24.3.3
+erlang 25.1.2
