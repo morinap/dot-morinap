@@ -25,13 +25,13 @@ font:
   # UI for powerline & tmux bottom bar.
   normal:
     # Font name
-    family: Inconsolata for Powerline
+    family: Inconsolata Nerd Font Mono
     # Font face
-    style: Medium
+    style: Regular
 
   # Bold font face
   bold:
-    family: Inconsolata for Powerline
+    family: Inconsolata Nerd Font Mono
     style: Bold
 
   # Italic font face
@@ -69,7 +69,7 @@ font:
   # y: 0
 
   # Better font rendering for mac
-  use_thin_strokes: true
+  #use_thin_strokes: true
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
