@@ -8,7 +8,12 @@ require('nvim-treesitter.configs').setup {
         'erlang',
         'heex',
         'html',
-        'surface'
+        'surface',
+        'scss',
+        'css',
+        'yaml',
+        'markdown',
+        'markdown_inline'
         --'typescript',
         --'javascript',
     },

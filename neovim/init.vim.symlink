@@ -2,13 +2,14 @@
 source ~/.config/nvim/optixal.vim
 
 """ Add my settings
-set cc=100                                                                            " 80 column marker
+set cc=72,80,120
 set list listchars=tab:»\ ,eol:¬,extends:›,precedes:‹,nbsp:␣,trail:•,space:·          " Show all whitespace
 set visualbell
 set splitright
 set splitbelow
 
 set spelllang=en,cjk
+set spell
 set clipboard+=unnamedplus
 
 

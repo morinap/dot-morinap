@@ -5,3 +5,4 @@ nvim-cmp-config.lua:.config/nvim/lua/
 nvim-tree-config.lua:.config/nvim/lua/
 telescope-config.lua:.config/nvim/lua/
 treesitter-config.lua:.config/nvim/lua/
+lspsaga-config.lua:.config/nvim/lua/
