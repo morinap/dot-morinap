@@ -1,0 +1,57 @@
+import = ["~/.config/alacritty/dracula.yml"]
+
+[cursor]
+blink_interval = 250
+
+[cursor.style]
+blinking = "Always"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "Inconsolata Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Inconsolata for Powerline"
+style = "Italic"
+
+[font.italic]
+family = "Inconsolata for Powerline"
+style = "Italic"
+
+[font.normal]
+family = "Inconsolata Nerd Font Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5D"
+key = "Left"
+mods = "Command|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5C"
+key = "Right"
+mods = "Command|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5A"
+key = "Up"
+mods = "Command|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5B"
+key = "Down"
+mods = "Command|Alt"
+
+[window]
+dynamic_padding = true
+startup_mode = "Maximized"
+
+[window.padding]
+x = 4
+y = 4
