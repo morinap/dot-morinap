@@ -1,2 +1,5 @@
 $DOTFILES_PATH/bin
 /usr/local/sbin
+/opt/homebrew/bin
+/opt/homebrew/opt/postgresql@15/bin
+/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/
