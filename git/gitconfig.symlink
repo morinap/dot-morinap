@@ -16,7 +16,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = code --wait -r
+        editor = nvim -f +startinsert
         pager = delta
 [merge]
         tool = kdiff3
