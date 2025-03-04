@@ -75,4 +75,20 @@ require('lspconfig')['solargraph'].setup{
   }
 }
 
+require('lspconfig')['rubocop'].setup{}
+
+require('lspconfig')['eslint'].setup{
+--  cmd = { 'node_modules/.bin/eslint' },
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+}
+
+require('lspconfig')['ts_ls'].setup{}
+
+require('lspconfig')['cssls'].setup{}
+
 add_capabilities()
