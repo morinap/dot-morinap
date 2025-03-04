@@ -1,2 +1,2 @@
 alacritty.toml:.config/alacritty/
-dracula.yml:./config/alacritty
+dracula.toml:./config/alacritty
