@@ -23,10 +23,15 @@ nnoremap <leader>cff :let @+=expand("%:t")<CR>
 nnoremap <leader>cfa :let @+=expand("%:p")<CR>
 nnoremap <leader>cfad :let @+=expand("%:p:h")<CR>
 
-nnoremap <leader>@ <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <leader># <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <leader>@ <cmd>Telescope coc document_symbols<cr>
+nnoremap <leader># <cmd>Telescope coc workspace_symbols<cr>
+nnoremap gd <cmd>Telescope coc definitions<cr>
+nnoremap gr <cmd>Telescope coc references<cr>
 
-autocmd BufWritePre * lua vim.lsp.buf.format()
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" autocmd BufWritePre * lua vim.lsp.buf.format()
 
 """ Vim signify
 let g:signify_sign_add = '+'

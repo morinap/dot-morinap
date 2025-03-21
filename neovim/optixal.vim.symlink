@@ -6,7 +6,7 @@ call plug#begin()
 " Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
-Plug 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -14,7 +14,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+" Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -61,9 +61,12 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'navarasu/onedark.nvim'
 Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-Plug 'williamboman/mason-lspconfig.nvim'
+" Plug 'glepnir/lspsaga.nvim'
+" Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+" Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fannheyward/telescope-coc.nvim'
+
 
 
 call plug#end()
@@ -174,18 +177,18 @@ let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
 
 """ Core plugin configuration (lua)
 lua << EOF
-servers = {
-    'pyright',
-    --'tsserver', -- uncomment for typescript. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for other language servers
-}
+-- servers = {
+--     'pyright',
+--     --'tsserver', -- uncomment for typescript. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for other language servers
+-- }
 require('treesitter-config')
 require('nvim-cmp-config')
-require('lspconfig-config')
+-- require('lspconfig-config')
 require('telescope-config')
 require('lualine-config')
 require('nvim-tree-config')
 require('diagnostics')
-require('lspsaga-config')
+-- require('lspsaga-config')
 EOF
 
 """ Custom Functions
