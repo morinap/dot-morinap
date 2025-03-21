@@ -1,0 +1,4 @@
+04-nvm.fish:.config/fish/conf.d
+nvm.fish:.config/fish/functions
+load_nvm.fish:.config/fish/functions
+nvm_find_nvmrc.fish:.config/fish/functions
