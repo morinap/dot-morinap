@@ -220,6 +220,7 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>$s <C-w>s<C-w>j:terminal<CR>:set nonumber<CR><S-a>
 nmap <leader>$v <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
+nmap <leader>$t :tab terminal<CR>:set nonumber<CR><S-a>
 
 " Python
 autocmd Filetype python nmap <leader>d <Plug>(pydocstring)
